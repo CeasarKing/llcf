@@ -1,0 +1,42 @@
+package com.lin.llcf.server.domain.dos;
+
+import lombok.Data;
+import org.hibernate.annotations.Proxy;
+
+import javax.persistence.*;
+import java.io.Serializable;
+import java.util.Date;
+
+@Proxy(lazy = false)
+@Entity
+@Table(name = "llcf_cfg_property")
+@Data
+public class CfgPropertyDO implements Serializable {
+
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name = "id")
+    private Long id;
+
+    @Column(name = "definition_id")
+    private Long definitionId;
+
+    @Column(name = "cfg_type")
+    private Integer cfgType;
+
+    @Column(name = "property_key")
+    private String propertyKey;
+
+    @Column(name = "property_value")
+    private String propertyValue;
+
+    @Column(name = "property_value_desc")
+    private String propertyValueDesc;
+
+    @Column(name = "create_time")
+    private Date createTime;
+
+    @Column(name = "update_time")
+    private Date updateTime;
+
+}
