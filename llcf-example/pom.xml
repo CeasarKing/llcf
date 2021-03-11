@@ -19,7 +19,7 @@
     <dependencies>
         <dependency>
             <groupId>com.lin</groupId>
-            <artifactId>llcf-client0</artifactId>
+            <artifactId>llcf-client</artifactId>
             <version>0.0.1-SNAPSHOT</version>
         </dependency>
         <dependency>
