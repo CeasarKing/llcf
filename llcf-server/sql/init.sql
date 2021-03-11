@@ -97,3 +97,8 @@ CREATE TABLE `llcf`.`llcf_cfg_property_definition` (
 ALTER TABLE `llcf`.`llcf_cfg_property_definition`
 ADD UNIQUE INDEX `uni_index` (`project_id` ASC, `module_id` ASC, `property_key` ASC) VISIBLE;
 ;
+
+INSERT INTO `llcf`.`llcf_project`(`id`,`project_key`,`project_name`,`project_desc`,`create_time`,`update_time`)VALUES(1,'hell', 'vava娃娃', '', '2021-03-05 21:19:49', '2021-03-05 21:19:50');
+INSERT INTO `llcf`.`llcf_module`(`id`,`project_id`,`module_key`,`module_name`,`module_desc`,`create_time`,`update_time`,`app_key`)VALUES(1, 1, 'hell', 'vava娃娃', '', '2021-03-05 21:39:10', '2021-03-05 21:39:10', 'qweva'), (2, 1, 'hell0 ', 'vava娃娃', '', '2021-03-05 21:39:10', '2021-03-05 21:39:10', '4gqwfqv');
+INSERT INTO `llcf`.`llcf_cfg_property_definition`(`id`,`project_id`,`module_id`,`property_key`,`property_name`,`property_desc`,`create_time`,`update_time`)VALUES(1,1,1,'worldwide.settlement', '全球结算配置', '全球结算配置描述', '2021-03-06 17:36:00','2021-03-10 14:51:43');
+INSERT INTO `llcf`.`llcf_cfg_property`(`id`,`definition_id`,`cfg_type`,`property_key`,`property_value`,`property_value_desc`,`create_time`,`update_time`)VALUES(2,1,1,'version','1','第一个版本','2021-03-06 18:04:40.293','2021-03-10 17:52:59'),(3,1,3,'toporg','cccckkkk','头部上家cccckkkk','2021-03-06 18:04:40.293','2021-03-10 17:52:59'),(7,1,5,'test.strlist','["a","b","c","d"]','特殊字符串列表','2021-03-06 18:04:40.293','2021-03-10 17:52:59'),(8,1,6,'test.intlist','[1,2,3]','测试输入json的数据','2021-03-06 18:04:40.293','2021-03-10 17:52:59');
