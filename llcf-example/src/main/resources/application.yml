@@ -1,0 +1,7 @@
+server:
+  port: 8077
+
+llcf:
+  env: dev
+  app:
+    key: qweva
