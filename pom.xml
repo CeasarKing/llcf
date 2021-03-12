@@ -24,7 +24,7 @@
     <description>一个统一的配置平台</description>
 
     <properties>
-        <java.version>11</java.version>
+        <java.version>8</java.version>
     </properties>
     <dependencies>
         <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->

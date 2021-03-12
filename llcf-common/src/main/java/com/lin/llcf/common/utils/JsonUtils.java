@@ -29,7 +29,7 @@ public class JsonUtils {
     }
 
     public static <T> List<T> readList(String json, Class<T> cls) {
-        TypeReference<List<T>> typeReference = new TypeReference<>() {};
+        TypeReference<List<T>> typeReference = new TypeReference<List<T>>() {};
         try {
             return OBJECT_MAPPER.readValue(json, typeReference);
         }catch (Exception e) {
