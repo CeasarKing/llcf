@@ -6,12 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="llcf-common" />
         <module name="llcf-example" />
         <module name="llcf-client" />
         <module name="llcf-server" />
+        <module name="llcf-common" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="llcf" target="8" />
+      <module name="llcf-client" target="8" />
+      <module name="llcf-common" target="8" />
+      <module name="llcf-example" target="8" />
+      <module name="llcf-server" target="8" />
+    </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">

@@ -7,7 +7,10 @@ import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClientBuilder;
 
+import java.io.BufferedReader;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.nio.charset.StandardCharsets;
 
 /**
@@ -22,8 +25,8 @@ public class HttpUtils {
             post.setHeader("Content-Type", "application/json;charset=utf8");
             post.setEntity(new StringEntity(json, StandardCharsets.UTF_8));
             response = httpClient.execute(post);
-            byte[] repBytes = response.getEntity().getContent().readAllBytes();
-            return new String(repBytes, StandardCharsets.UTF_8);
+            InputStream is = response.getEntity().getContent();
+            return FileUtils.readFromInStream(is);
         }catch (Exception e) {
             e.printStackTrace();;
         }finally {
