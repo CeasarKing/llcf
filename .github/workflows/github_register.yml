@@ -27,3 +27,18 @@ jobs:
     
     - name: Build with Maven
       run: mvn -U clean package -Dmaven.test.skip=true && cp -rf ./llcf-server/target/llcf-server-0.0.1-SNAPSHOT.jar ./ && rm -rf ./llcf-client && rm -rf ./llcf-common && rm -rf ./llcf-example && rm -rf ./llcf-server && rm -rf ./pom.xml && ls
+        
+    - name: Build Docker Image
+      id: buildAndPushImage
+      uses: risfeng/docker-image-build-push-action@v1.0
+      with:
+        registry_url: 'ccr.ccs.tencentyun.com'
+        namespaces: 'tcb-1083895682-xnfy'
+        repository_name: 'llcf'
+        user_name: 1083895682
+        password: 1355@lIN
+        image_version: 'v1.0'
+        docker_file: './Dockerfile'
+
+    - name: Image digest
+      run: echo ${{ steps.docker_build.outputs.digest }}
