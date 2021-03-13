@@ -16,8 +16,8 @@ RUN mkdir -p /usr/share/maven /usr/share/maven/ref \
   && echo "${SHA}  /tmp/apache-maven.tar.gz" | sha512sum -c - \
   && tar -xzf /tmp/apache-maven.tar.gz -C /usr/share/maven --strip-components=1 \
   && rm -f /tmp/apache-maven.tar.gz \
-  && /usr/share/maven/bin/mvn -U clean package -Dmaven.test.skip=true
-  && cp -rf ./llcf-server/target/llcf-server-0.0.1-SNAPSHOT.jar ${WORK_SPACE}
-  && rm -rf ${MAVEN_HOME}
+  && /usr/share/maven/bin/mvn -U clean package -Dmaven.test.skip=true \
+  && cp -rf ./llcf-server/target/llcf-server-0.0.1-SNAPSHOT.jar ${WORK_SPACE} \
+  && rm -rf ${MAVEN_HOME} \
 
 EXPOSE 8080
