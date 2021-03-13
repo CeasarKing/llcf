@@ -2,6 +2,6 @@ FROM ubuntu
 
 ENV WORK_SPACE /home/lin/llcf
 RUN mkdir -p ${WORK_SPACE}
-COPY /home/runner/work/llcf/llcf/llcf-server-0.0.1-SNAPSHOT.jar ${WORK_SPACE}
+RUN pwd >> text1 && ls >> text2
 
 EXPOSE 8080
