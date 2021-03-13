@@ -23,7 +23,7 @@ jobs:
         java-version: 1.8
         
     - name: Build with Maven
-      run: mvn -B package --file pom.xml      
+      run: mvn -U clean package -Dmaven.test.skip=true && ls && cd ./output && ls
     
     - name: Check Out Repo 
       uses: actions/checkout@v2
@@ -45,7 +45,7 @@ jobs:
         context: ./
         file: ./Dockerfile
         push: true
-        tags: ceasarking/llcf:latest
+        tags: xiaolinnotsleep/llcf
 
     - name: Image digest
       run: echo ${{ steps.docker_build.outputs.digest }}
