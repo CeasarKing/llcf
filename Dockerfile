@@ -1,4 +1,4 @@
-FROM ccr.ccs.tencentyun.com/itingluo/maven
+FROM itingluo/maven
 
 ENV WORK_SPACE /home/lin/llcf/
 
